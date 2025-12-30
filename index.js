@@ -6,11 +6,8 @@ app.use(express.json())
 app.use(express.static("public"))
 
 const pool=new Pool({
-    user:"postgres",
-    host:"localhost",
-    database:"todo",
-    password:"relationaldb",
-    port:5432
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
 })
 
 /* app.get("/", (req,res)=>{
