@@ -1,8 +1,10 @@
-require("dotenv").config();
+require("dotenv").config()
+const cors = require("cors")
 const express=require("express")
 const {Pool}=require("pg")
 const path=require("path")
 const app=express()
+app.use(cors())
 app.use(express.json())
 app.use(express.static("public"))
 
